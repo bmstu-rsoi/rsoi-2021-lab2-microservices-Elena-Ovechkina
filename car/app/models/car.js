@@ -14,4 +14,3 @@ const CarSchema = new Schema({
 
 
 mongoose.model('Car', CarSchema);
-
