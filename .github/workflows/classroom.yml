@@ -22,8 +22,8 @@ jobs:
         uses: anthonyvscode/newman-action@v1
         with:
           # TODO insert your variant
-          collection: <variant>/postman/[rsoi] postman_collection.json
-          environment: <variant>/postman/[rsoi][heroku] postman_environment.json
+          collection: v3/postman/[rsoi] postman_collection.json
+          environment: v3/postman/[rsoi][heroku] postman_environment.json
           delayRequest: 50
           reporters: cli
 

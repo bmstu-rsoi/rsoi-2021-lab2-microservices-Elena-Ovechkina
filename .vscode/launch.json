@@ -30,7 +30,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\agregator\\test\\unit.test.js"
+            "program": "${workspaceFolder}\\agregator\\app.js"
         }
     ]
 }
