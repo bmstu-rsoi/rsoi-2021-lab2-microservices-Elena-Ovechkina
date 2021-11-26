@@ -49,11 +49,11 @@ describe('Unit тесты', function () {
         let answer = await chai.request(serverAddress)
             .get('/cars')
             .query({
-                page: 1, size: 1, showAll: true
+                page: 2, size: 1, showAll: true
             })
 
         expect(answer).has.status(200);
-        expect(answer.body.page).to.be.equal(1);
+        expect(answer.body.page).to.be.equal(2);
         expect(answer.body.pageSize).to.be.eq(1);
         expect(answer.body.totalElements).to.be.eq(cars.length)
         expect(answer.body.items).has.length(1);
