@@ -23,42 +23,42 @@ jobs:
       # Установка библиотек для теста CarService
       - name: Install dependencies for Car-Service
         run: npm install
-        workdir: ./car
+        working-directory: ./car
 
       # Запуск тестов для CarService
       - name: Run test Car-Service
         run: npm run ci
-        workdir: ./car
+        working-directory: ./car
 
       # Установка библиотек для теста PaymentService
       - name: Install dependencies for Payment-Service
         run: npm install
-        workdir: ./payment
+        working-directory: ./payment
 
       # Запуск тестов для PaymentService
       - name: Run test Payment-Service
         run: npm run ci
-        workdir: ./payment
+        working-directory: ./payment
 
         # Установка библиотек для теста RentalService
       - name: Install dependencies for Rental-Service
         run: npm install
-        workdir: ./rental
+        working-directory: ./rental
 
       # Запуск тестов для RentalService
       - name: Run test Rental-Service
         run: npm run ci
-        workdir: ./rental
+        working-directory: ./rental
 
         # Установка библиотек для теста AgregatorService
       - name: Install dependencies for Agregator-Service
         run: npm install
-        workdir: ./agregator
+        working-directory: ./agregator
 
       # Запуск тестов для AgregatorService
       - name: Run test Agregator-Service
         run: npm run ci
-        workdir: ./agregator
+        working-directory: ./agregator
 
       # Размещение сервисов по серверам
       - name: Deploy services
