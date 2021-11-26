@@ -45,6 +45,7 @@ const config = {
     },
     port: process.env.PORT || 3000,
     serverAddress: "http://localhost:3000",
+    // удалённая БД
     db: 'mongodb+srv://programm:myprogramm@cluster0.o3zxo.mongodb.net/agregator-db?retryWrites=true&w=majority'
   },
 
@@ -55,11 +56,11 @@ const config = {
     },
     services: {
       cars: 'https://car-service-l.herokuapp.com/',
-      rental: 'http://localhost:3001',
-      payment:'http://localhost:3003'
+      rental: 'https://rental-service-l.herokuapp.com/',
+      payment:'https://payment-service-l.herokuapp.com/'
     },
     port: process.env.PORT || 3000,
-    serverAddress: "http://localhost:3000",
+    serverAddress: "https://aggregator-service-l.herokuapp.com/",
     db: 'mongodb+srv://programm:myprogramm@cluster0.o3zxo.mongodb.net/agregator-db?retryWrites=true&w=majority'
   }
 };
