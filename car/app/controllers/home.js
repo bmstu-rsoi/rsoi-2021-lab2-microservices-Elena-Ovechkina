@@ -11,7 +11,7 @@ module.exports = (app) => {
 router.get('/', async function (req, res, next) {
   try {
     let filter = { availability: true };
-    let page = 0;
+    let page = 1;
     let size = 15;
 
     if (req.query.size) {
@@ -19,8 +19,10 @@ router.get('/', async function (req, res, next) {
     }
 
     if (req.query.page) {                           // query параметры - настройки для запроса. Они не меняют рез-т, а уточняют его.
-      page = (Number.parseInt(req.query.page) - 1) * size;       // т.к. в req.query все значения String, делаем Number, исп. иетод parseInt
+      page = Number.parseInt(req.query.page);       // т.к. в req.query все значения String, делаем Number, исп. иетод parseInt
     }
+
+    let skip = (page - 1) * size
 
     if (req.query.showAll == "true") {
       delete filter.availability;
@@ -28,7 +30,7 @@ router.get('/', async function (req, res, next) {
 
     let actions = [
       CarModel.find(filter)    //  Получение документов из коллекции
-        .skip(page)            //  Сколько записей в БД пропустить до получения результата
+        .skip(skip)            //  Сколько записей в БД пропустить до получения результата
         .limit(size),          //  Сколько записей из БД берется для формирования результат
       CarModel.count(filter)   //  Получение количества документов в коллекции
     ];
