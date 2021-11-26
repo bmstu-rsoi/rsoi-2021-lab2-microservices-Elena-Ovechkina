@@ -62,15 +62,46 @@ jobs:
 
       # Размещение сервисов по серверам
       # Тут есть ошибка в библиотеке (фантомные проблемы при сборке)
-      - name: Deploy services
-        id: heroku
-        uses: snithyanantham/docker-compose-multiple-apps-heroku-deploy@v1.0  # use the latest version of the action
-        with:
-          email: ovechkina.elina@yandex.ru
-          api_key: 65144d45-e66f-424d-ba7a-c928c4a7ca1a
-          docker_compose_file: './docker-compose.yml'
-          heroku_apps: '[{"imagename":"car-image","appname":"car-service-l","apptype":"web"},{"imagename":"payment-image","appname":"payment-service-l","apptype":"web"},{"imagename":"rental-service-l-image","appname":"rental-service-l","apptype":"web"},{"imagename":"agregator-image","appname":"aggregator-service-l","apptype":"web"}]'
+      # - name: Deploy services
+      #   id: heroku
+      #   uses: snithyanantham/docker-compose-multiple-apps-heroku-deploy@v1.0  # use the latest version of the action
+      #   with:
+      #     email: ovechkina.elina@yandex.ru
+      #     api_key: 65144d45-e66f-424d-ba7a-c928c4a7ca1a
+      #     docker_compose_file: './docker-compose.yml'
+      #     heroku_apps: '[{"imagename":"car-image","appname":"car-service-l","apptype":"web"},{"imagename":"payment-image","appname":"payment-service-l","apptype":"web"},{"imagename":"rental-service-l-image","appname":"rental-service-l","apptype":"web"},{"imagename":"agregator-image","appname":"aggregator-service-l","apptype":"web"}]'
 
+      - uses: akhileshns/heroku-deploy@v3.4.6 # This is the action
+        working-directory: ./car
+        with:
+          heroku_api_key: 65144d45-e66f-424d-ba7a-c928c4a7ca1a
+          heroku_app_name: "car-service-l" #Must be unique in Heroku
+          heroku_email: "ovechkina.elina@yandex.ru"
+          docker: true
+
+      - uses: akhileshns/heroku-deploy@v3.4.6 # This is the action
+        working-directory: ./payment
+        with:
+          heroku_api_key: 65144d45-e66f-424d-ba7a-c928c4a7ca1a
+          heroku_app_name: "payment-service-l" #Must be unique in Heroku
+          heroku_email: "ovechkina.elina@yandex.ru"
+          docker: true
+
+      - uses: akhileshns/heroku-deploy@v3.4.6 # This is the action
+        working-directory: ./rental
+        with:
+          heroku_api_key: 65144d45-e66f-424d-ba7a-c928c4a7ca1a
+          heroku_app_name: "rental-service-l" #Must be unique in Heroku
+          heroku_email: "ovechkina.elina@yandex.ru"
+          docker: true
+
+      - uses: akhileshns/heroku-deploy@v3.4.6 # This is the action
+        working-directory: ./agregator
+        with:
+          heroku_api_key: 65144d45-e66f-424d-ba7a-c928c4a7ca1a
+          heroku_app_name: "aggregator-service-l" #Must be unique in Heroku
+          heroku_email: "ovechkina.elina@yandex.ru"
+          docker: true
 
       - name: Run API Tests
         id: run-newman
