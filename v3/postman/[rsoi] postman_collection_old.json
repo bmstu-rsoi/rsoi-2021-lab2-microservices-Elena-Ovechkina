@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d1962d6e-1319-47cc-98e8-bb88a97cfae9",
+		"_postman_id": "9a2dd82a-078d-4c32-bff5-48c6f2b00a5c",
 		"name": "[rsoi] Car Rental System",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -586,7 +586,7 @@
 									"",
 									"    pm.expect(response.payment).to.be.not.undefined",
 									"    pm.expect(response.payment.paymentUid).to.be.not.undefined",
-									"    pm.expect(response.payment.status).to.be.eq(\"CANCELED\")",
+									"    pm.expect(response.payment.status).to.be.eq(\"REVERSED\")",
 									"    const days = Math.abs(moment(dateFrom).diff(moment(dateTo), \"days\"))",
 									"    pm.expect(response.payment.price).to.be.eq(days * rentalPrice)",
 									"",
@@ -815,7 +815,7 @@
 							{
 								"description": "(Required) Имя пользователя",
 								"key": "X-User-Name",
-								"value": "{{username}}"
+								"value": "cupidatat incididunt enim irure"
 							}
 						],
 						"url": {
@@ -1030,7 +1030,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:3000"
+			"value": "http://localhost:8080"
 		},
 		{
 			"key": "carUid",
