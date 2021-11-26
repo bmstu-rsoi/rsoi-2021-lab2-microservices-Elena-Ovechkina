@@ -10,11 +10,6 @@ services:
     container_name: payment
     restart: always
     build: ./payment
-  rental:
-    image: rental-service-l-image
-    container_name: rental-service-l
-    restart: always
-    build: ./rental
   agregator:
     image: agregator-image
     container_name: agregator
