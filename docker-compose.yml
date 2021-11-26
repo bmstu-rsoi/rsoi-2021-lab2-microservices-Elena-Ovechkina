@@ -1,18 +1,26 @@
 version: "3"
 services:
-  postgres:
-    image: library/postgres:13
-    container_name: postgres
-    restart: on-failure
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: "postgres"
-      POSTGRES_DB: postgres
-    volumes:
-      - db-data:/var/lib/postgresql/data
-      - ./postgres/:/docker-entrypoint-initdb.d/
-    ports:
-      - 5432:5432
-
-volumes:
-  db-data:
+  car:
+    image: car-image
+    container_name: car
+    restart: always
+    build: ./car
+  payment:
+    image: payment-image
+    container_name: payment
+    restart: always
+    build: ./payment
+  rental:
+    image: rental-image
+    container_name: rental
+    restart: always
+    build: ./rental
+  agregator:
+    image: agregator-image
+    container_name: agregator
+    restart: always
+    build: ./agregator
+    depends_on:
+      - car
+      - payment
+      - rental
