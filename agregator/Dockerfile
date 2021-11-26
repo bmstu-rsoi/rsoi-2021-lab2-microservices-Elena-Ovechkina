@@ -5,7 +5,7 @@ WORKDIR /home/project/lab1
 #  Копирование данных о зависимостях проекта
 COPY ./package.json ./package.json
 #  Запуск команды для установки библиотек
-RUN npm install
+RUN npm install --only=prod
 #  Копируем проект в директорию
 COPY . .
 #  Откроем порт для нашего приложения

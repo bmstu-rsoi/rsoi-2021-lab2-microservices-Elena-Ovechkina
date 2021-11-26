@@ -69,8 +69,8 @@ jobs:
           email: ovechkina.elina@yandex.ru
           api_key: 65144d45-e66f-424d-ba7a-c928c4a7ca1a
           docker_compose_file: './docker-compose.yml'
-          heroku_apps: '[{"imagename":"car-image","appname":"car-service-l","apptype":"web"},{"imagename":"payment-image","appname":"payment-service-l","apptype":"web"},{"imagename":"agregator-image","appname":"aggregator-service-l","apptype":"web"}]'
-    # {"imagename":"rental-service-l-image","appname":"rental-service-l","apptype":"web"},
+          heroku_apps: '[{"imagename":"car-image","appname":"car-service-l","apptype":"web"},{"imagename":"payment-image","appname":"payment-service-l","apptype":"web"},{"imagename":"rental-service-l-image","appname":"rental-service-l","apptype":"web"},{"imagename":"agregator-image","appname":"aggregator-service-l","apptype":"web"}]'
+
     # - name: 'Deploy car'
     #     working-directory: ./car
     #     uses: akhileshns/heroku-deploy@v3.4.6 # This is the action
