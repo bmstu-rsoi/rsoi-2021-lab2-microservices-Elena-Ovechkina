@@ -61,6 +61,7 @@ jobs:
         working-directory: ./agregator
 
       # Размещение сервисов по серверам
+      # Тут есть ошибка в библиотеке
       - name: Deploy services
         id: heroku
         uses: snithyanantham/docker-compose-multiple-apps-heroku-deploy@v1.0  # use the latest version of the action
