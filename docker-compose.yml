@@ -20,7 +20,3 @@ services:
     container_name: agregator
     restart: always
     build: ./agregator
-    depends_on:
-      - car
-      - payment
-      - rental
