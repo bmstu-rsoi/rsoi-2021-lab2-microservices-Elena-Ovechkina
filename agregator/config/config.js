@@ -55,12 +55,12 @@ const config = {
       name: 'agregator'
     },
     services: {
-      cars: 'https://car-service-l.herokuapp.com/',
-      rental: 'https://rental-service-l.herokuapp.com/',
-      payment:'https://payment-service-l.herokuapp.com/'
+      cars: 'https://car-service-l.herokuapp.com',
+      rental: 'https://rental-service-l.herokuapp.com',
+      payment:'https://payment-service-l.herokuapp.com'
     },
     port: process.env.PORT || 3000,
-    serverAddress: "https://aggregator-service-l.herokuapp.com/",
+    serverAddress: "https://aggregator-service-l.herokuapp.com",
     db: 'mongodb+srv://programm:myprogramm@cluster0.o3zxo.mongodb.net/agregator-db?retryWrites=true&w=majority'
   }
 };
