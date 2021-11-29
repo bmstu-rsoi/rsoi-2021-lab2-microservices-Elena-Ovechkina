@@ -11,8 +11,8 @@ services:
     restart: always
     build: ./payment
   rental:
-    image: rental-service-l-image
-    container_name: rental-service-l
+    image: rental-image
+    container_name: rental
     restart: always
     build: ./rental
   agregator:
